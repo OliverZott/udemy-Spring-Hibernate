@@ -9,4 +9,9 @@ public class SkiCoach implements Coach {
     public String getDailyWorkout() {
         return "More Pooooowwwwder!";
     }
+
+    @Override
+    public String getDailyFortune() {
+        return null;
+    }
 }
