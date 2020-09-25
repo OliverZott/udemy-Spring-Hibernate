@@ -11,7 +11,7 @@
     (video 43)  
         - default scope: *Singleton* (Prototype, Session,...)
         - *init* / *destroy* methods
-    - XML
+    - XML  
     - Annotations   
         - enable component scanning in config
         - add @Component annotation to class

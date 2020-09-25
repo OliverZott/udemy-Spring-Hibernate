@@ -4,10 +4,11 @@ Chapter 7 / 8 / 9
 ## Content
 - Configuration:  
     - **IoC**
-    - **DI**
+    - **DI** 
         - Constructor injection
         - Setter injection
         - Inject Literals
+        - all equal (68)
     - Bean **scope** / **lifecycle**  
     (video 43)  
         - default scope: *Singleton* (Prototype, Session,...)
@@ -16,9 +17,10 @@ Chapter 7 / 8 / 9
     - Annotations   
         - enable component scanning in config
         - @Component (ioc)
-        - @Autowired (di)   
+        - @Autowired (di)   ...also working without autowired on setter / constructor
         https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/6933960#questions   
         https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-autowired-annotation
+        - @Qualifier ...(tricky with a constructor!)
     - Pure Java
 
   
