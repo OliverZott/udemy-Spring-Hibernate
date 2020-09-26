@@ -9,7 +9,7 @@ Chapter 7 / 8 / 9
         - Setter injection
         - Inject Literals
         - all equal (68)
-    - Bean **scope** / **lifecycle**  
+    - Bean **scope** (lifecycle, amount of instances, how is it shared) 
     (video 43)  
         - default scope: *Singleton* (Prototype, Session,...)
         - *init* / *destroy* methods

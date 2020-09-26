@@ -2,6 +2,7 @@ package com.luv2code.springdemo;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,7 +20,10 @@ public class FileFortuneService implements FortuneService {
         System.out.println(">> FileFortuneService: Inside Default-Constructor.");
     }
 
-    //@PostConstruct
+    /**
+     * PostContruct-Annotation to not have to call method before/in getFortune()
+     */
+    @PostConstruct
     private List<String> loadFortunesFile() {
         System.out.println(">> FileFortuneService: inside method 'loadFortunesFile'.");
 
@@ -42,7 +46,12 @@ public class FileFortuneService implements FortuneService {
 
     @Override
     public String getFortune() {
-        List<String>  fortuneList = this.loadFortunesFile();
+        /* If no PostConstruction is used with loadFortunesFile() method! */
+        // List<String>  fortuneList = this.loadFortunesFile();
+
+        /* If PostConstruct Annotation is used! */
+        List<String> fortuneList = fortunes;
+
         int rnd = random.nextInt(fortuneList.size());
         return fortuneList.get(rnd);
     }
