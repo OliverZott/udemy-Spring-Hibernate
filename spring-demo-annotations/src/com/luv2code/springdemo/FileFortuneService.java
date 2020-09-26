@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,9 +12,8 @@ import java.util.Random;
 @Component
 public class FileFortuneService implements FortuneService {
 
-    private String fileName = "src/com/luv2code/springdemo/fortune_data.txt";
-    private List<String> fortunes = new ArrayList<>();
-    private Random random = new Random();
+    private final List<String> fortunes = new ArrayList<>();
+    private final Random random = new Random();
 
     public FileFortuneService() {
         System.out.println(">> FileFortuneService: Inside Default-Constructor.");
@@ -24,12 +24,13 @@ public class FileFortuneService implements FortuneService {
         System.out.println(">> FileFortuneService: inside method 'loadFortunesFile'.");
 
         try {
+            String fileName = "src/com/luv2code/springdemo/fortune_data.txt";
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             String line = null;
             while ( (line = reader.readLine()) != null) {
                 fortunes.add(line);
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("An error occurred during file-stream: ");
             e.printStackTrace();
         }
