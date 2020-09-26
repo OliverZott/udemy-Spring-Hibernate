@@ -21,6 +21,7 @@ Chapter 7 / 8 / 9
         https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/6933960#questions   
         https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-autowired-annotation
         - @Qualifier ...(tricky with a constructor!)
+        - @PostConstruct     @PreDestroy (78 / 89)
     - Pure Java
 
   
