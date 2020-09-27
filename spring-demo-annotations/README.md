@@ -14,7 +14,7 @@ Chapter 7 / 8 / 9
         - default scope: *Singleton* (Prototype, Session,...)
         - *init* / *destroy* methods
     - XML
-    - Annotations   
+    - Annotations + XML   
         - enable component scanning in config
         - @Component (ioc)
         - @Autowired (di)   ...also working without autowired on setter / constructor
@@ -22,7 +22,11 @@ Chapter 7 / 8 / 9
         https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-autowired-annotation
         - @Qualifier ...(tricky with a constructor!)
         - @PostConstruct     @PreDestroy (78 / 89)
-    - Pure Java
+    - Annotations (no XML)  
+        - @Bean ...Exposure Beans
+        - ... DI  
+        - ... read Spring-Java Config Class
+        - ... retrieve  Bean from Spring Container
 
   
 
