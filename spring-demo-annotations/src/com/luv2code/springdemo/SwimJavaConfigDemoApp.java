@@ -16,6 +16,7 @@ public class SwimJavaConfigDemoApp {
         // call method on the bean
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theCoach.getDailyFortune());
+        System.out.println(theCoach.getEmail());
 
         // close context
         context.close();
