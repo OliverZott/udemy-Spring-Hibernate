@@ -28,10 +28,19 @@ Chapter 7 / 8 / 9
         - ... read Spring-Java Config Class
         - ... retrieve  Bean from Spring Container
 - MVC (Chapter 11) 
-[docs](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web.html)
-    - dsfhttps://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web.html
-  
-
+[docs](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web.html)  
+    - Configuration  
+        - `WEB-INF/web.xml` ...
+        - ...for configure Spring MVC Servlet Dispatcher
+        - ...setup URL Mapping to Spring MVC Servlet Dispatcher
+        - `WEB-INF/spring-mvc-demo-servlet.xml` ...
+        - ...for Spring Component scanning
+        - ...support for conversion, validation, formatting
+        - ...configure Spring MVC View Resolver
+        
+        
+        
+        
 
 ## Spring Container
 [Course Link](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/5181680?start=30#overview)
