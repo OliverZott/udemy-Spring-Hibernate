@@ -44,6 +44,7 @@ Chapter 7 / 8 / 9
             1. Add Request Mapping
             1. Return View Name
             1. Develop View Page
+            1. ERRORS: [Clear Tomcat Cache](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/5609866#questions)
         
         
         
