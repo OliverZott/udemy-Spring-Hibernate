@@ -1,7 +1,11 @@
 package com.luv2code.springdemo.mvc;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+
 
 @Controller
 public class HelloWorldController {
@@ -17,4 +21,24 @@ public class HelloWorldController {
     public String processForm() {
         return "helloworld";
     }
+
+    // Add form-data to Model
+    @RequestMapping("processFormVersionTwo")
+    public String letShouldDude(HttpServletRequest request, Model model) {
+
+        // read request parameter from html form
+        String theName = request.getParameter("studentName");
+
+        // convert to upper-case
+        theName = theName.toUpperCase();
+
+        // create message
+        String result = "Yo! " + theName;
+
+        // add message to model
+        model.addAttribute("message", result);
+
+        return "helloworld";
+    }
+
 }
