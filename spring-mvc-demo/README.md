@@ -26,9 +26,9 @@ Chapter 7 / 8 / 9
         - @Bean ...Exposure Beans
         - ... DI  
         - ... read Spring-Java Config Class
-        - ... retrieve  Bean from Spring Container
-- MVC (Chapter 11) 
-[docs](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web.html)  
+        - ... retrieve  Bean from Spring Container  
+        
+- MVC (Chapter 11) [docs](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web.html)  
     - Configuration  
         - `WEB-INF/web.xml` ...
         - ...for configure Spring MVC Servlet Dispatcher
@@ -50,6 +50,10 @@ Chapter 7 / 8 / 9
     - Model  
         - Download mising **JAR** `https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/4.0.1`
     - WAR-Files [Link](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/5633776#overview)
+    - MVC - Form Tag & Data-Binding  
+      - form:form ...for input
+      - 
+      
         
         
         
