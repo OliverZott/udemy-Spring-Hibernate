@@ -17,7 +17,9 @@
 	<!-- Step 4: Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven/>
 
-	<!-- Step 5: Define Spring MVC view resolver -->
+	<!-- Step 5: Define Spring MVC view resolver 
+	https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/view.html
+	-->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
