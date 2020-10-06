@@ -1,5 +1,8 @@
 package com.luv2code.springdemo.mvc;
 
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -30,6 +33,9 @@ public class StudentController {
 		// add Student object to model
 		theModel.addAttribute("student", theStudent);
 		
+		// add countries from external source to MVC Model Attribute
+		theModel.addAttribute("theCountryOptions", countrOptions);
+		
 		return "student-form";
 	}
 	
@@ -50,5 +56,15 @@ public class StudentController {
 		
 		return "student-confirmation";
 	}
+	
+	
+	/**
+	 * Populate countries in drop-down from external properties file !
+	 * 
+	 * 1. private property, here!
+	 * 2. add in the MVC-Model-Attribute (above)
+	 */
+	@Value("#{countryOptions}")
+	private Map<String, String> countrOptions;
 
 }
