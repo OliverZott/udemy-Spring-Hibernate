@@ -8,7 +8,7 @@
 </head>
 <body>
 
-This student in confirmed: ${student.firstName} ${student.lastName}
+This student in confirmed: ${student.firstName} ${student.lastName} from ${student.country}
 
 </body>
 </html>

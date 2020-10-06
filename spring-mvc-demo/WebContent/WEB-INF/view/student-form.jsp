@@ -11,15 +11,25 @@
 <body>
 
 	<form:form action="processForm" modelAttribute="student">
-	
+		
 		First name: <form:input path="firstName"/>
 		<br><br>
 		Last name: <form:input path="lastName"/>
-		<br><br>
+	
+		<br> <br>
+	
+		<form:select path="country">
+			<form:option value="BRA" label="Brazil" />
+			<form:option value="AUT" label="Austria" />
+			<form:option value="FRA" label="France" />
+		</form:select>
+	
+		<br> <br>
 		
-		<input type="submit" value="Submit">
-		
+		<input type="submit" value="Submit"> 
+	
 	</form:form>
+	
 
 </body>
 </html>
