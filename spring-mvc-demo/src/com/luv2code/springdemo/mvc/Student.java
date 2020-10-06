@@ -40,11 +40,6 @@ public class Student {
 	}
 
 
-	public LinkedHashMap<String, String> getCountryOptions() {
-		return countryOptions;
-	}
-
-
 	public String getCountry() {
 		return country;
 	}
@@ -54,5 +49,11 @@ public class Student {
 		this.country = country;
 	}
 
+
+	public LinkedHashMap<String, String> getCountryOptions() {
+		return countryOptions;
+	}
+	
+	
 	
 }
