@@ -51,8 +51,8 @@ Chapter 7 / 8 / 9
         - Download mising **JAR** `https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/4.0.1`
     - WAR-Files [Link](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/5633776#overview)
     - MVC - Form Tag & Data-Binding  
-      - form:form ...for input
-      - 
+      - form:form / select / button / checkbox...for input
+      - Properties-Files for external data source
       
         
         

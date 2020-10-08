@@ -12,17 +12,32 @@
 
 	<form:form action="processForm" modelAttribute="student">
 		
-		First name: <form:input path="firstName"/>
+		First name: 
+		<form:input path="firstName"/>
+		
 		<br><br>
-		Last name: <form:input path="lastName"/>
+		
+		Last name: 
+		<form:input path="lastName"/>
 	
-		<br> <br>
+		<br><br>
 	
 		<form:select path="country">
 			<form:options items="${theCountryOptions}" />
 		</form:select>
-	
-		<br> <br>
+		
+		<br><br>
+		Favorite Language:
+		
+		<form:radiobuttons path="favoriteLanguage" items="${student.programmingLanguages}"/>
+		
+		<br>
+		and also:
+		
+		C 
+		<form:radiobutton path="favoriteLanguage" value="C"/>			<!-- Spring calls "student.setFavoriteLanguage" -->
+		
+		<br><br>
 		
 		<input type="submit" value="Submit"> 
 	

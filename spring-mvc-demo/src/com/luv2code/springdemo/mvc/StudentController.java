@@ -52,7 +52,7 @@ public class StudentController {
 	public String processForm(@ModelAttribute("student") Student theStudent) {
 		
 		// log input data
-		System.out.println("theStudent: " + theStudent.getFirstName() + " " +  theStudent.getLastName() + " from " + theStudent.getCountry());
+		System.out.println("theStudent: " + theStudent.getFirstName() + " " +  theStudent.getLastName() + " from " + theStudent.getCountry() + " likes " + theStudent.getFavoriteLanguage());
 		
 		return "student-confirmation";
 	}
