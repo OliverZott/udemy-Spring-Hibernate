@@ -54,7 +54,9 @@ Chapter 7 / 8 / 9
       - form:form / select / button / checkbox...for input
       - c:forEach [doc](https://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/c/tld-summary.html)
       - Properties-Files for external data source   
-    - Form **Validation**
+    - Form **Validation**   
+    	- Java Bean Validation (specification)  
+    	- Hibernate [(Hibernate Validator)](http://hibernate.org/validator/) original ORM also JSR 
       
         
         
@@ -111,6 +113,8 @@ Chapter 7 / 8 / 9
 ... Java Object created by Spring
 https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-introduction 
 https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/8845630#overview
+
+**Artifacts** [Maven Artifacts](https://stackoverflow.com/questions/2487485/what-is-a-maven-artifact)
 
 **'this'**  
 https://stackoverflow.com/questions/2411270/when-should-i-use-this-in-a-class
