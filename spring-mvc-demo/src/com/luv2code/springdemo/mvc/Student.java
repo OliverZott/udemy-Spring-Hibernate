@@ -1,5 +1,6 @@
 package com.luv2code.springdemo.mvc;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class Student {
@@ -11,6 +12,8 @@ public class Student {
 	
 	// data for programming-languages
 	private LinkedHashMap<String, String> programmingLanguages;
+	
+	private ArrayList<String> operatingSystems;
 	
 	/* 
 	 * dictionary for countries (e.g. external from database, ...)
@@ -82,6 +85,16 @@ public class Student {
 
 	public void setProgrammingLanguages(LinkedHashMap<String, String> programmingLanguages) {
 		this.programmingLanguages = programmingLanguages;
+	}
+
+
+	public ArrayList<String> getOperatingSystems() {
+		return operatingSystems;
+	}
+
+
+	public void setOperatingSystems(ArrayList<String> operatingSystems) {
+		this.operatingSystems = operatingSystems;
 	}
 	
 }
