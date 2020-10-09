@@ -1,9 +1,13 @@
 # Udemy -spring-demo-one
-**Configuration with Java Annotations**  
-Chapter 7 / 8 / 9
+
+[Spring 5 Documentation](https://docs.spring.io/spring-framework/docs/5.2.9.RELEASE/spring-framework-reference/)  
+[Spring 4 Documentation](https://docs.spring.io/spring-framework/docs/4.2.4.RELEASE/spring-framework-reference/html/index.html)
 ## Content
 - Configuration:  
-    - **IoC**
+    - **IoC**  
+    	- 3 ways (XML, XML+annotations, annotations) ...Annotations only:  
+    	- @Configuration ...**Configuration class**  
+    	- Rest analog to xml version (read config-class / retrieve beans from spring container)
     - **DI** 
         - Constructor injection
         - Setter injection
@@ -37,6 +41,8 @@ Chapter 7 / 8 / 9
         - ...for Spring Component scanning
         - ...support for conversion, validation, formatting
         - ...configure Spring MVC View Resolver
+        - Context-Root [link](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/6724782?%24web_only=true&~channel=email&~stage=published&%24fallback_url=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fspring-hibernate-tutorial%2Flearn%2F&_branch_match_id=843036747392158573#questions/12748393/&utm_campaign=email&utm_source=sendgrid.com&utm_medium=email)
+        [StackOverflow](https://stackoverflow.com/questions/25818429/correct-use-of-getcontextpath-on-jsp)  [doc](https://docs.oracle.com/javaee/1.4/tutorial/doc/JSPIntro7.html)
     - Controller & View  
         - Steps: 
             1. Create Controller 
@@ -56,7 +62,10 @@ Chapter 7 / 8 / 9
       - Properties-Files for external data source   
     - Form **Validation**   
     	- Java Bean Validation (specification)  
-    	- Hibernate [(Hibernate Validator)](http://hibernate.org/validator/) original ORM also JSR 
+    	- Hibernate [(Hibernate Validator)](http://hibernate.org/validator/) original ORM also JSR   
+    	- `BindingResult` / Errors right behind `@Valid @ModelAttribute...`  [doc](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web.html#mvc-ann-methods)  
+    	- **Developement process** (validation in model (class) -> error msg in template (html) -> validation in controller -> confirmation page update)  
+    	- 
       
         
         

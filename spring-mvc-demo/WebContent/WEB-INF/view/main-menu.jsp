@@ -11,5 +11,12 @@
 
 <hr>
 <a href="student/showForm">Student Form</a>
+
+<hr>
+<a href="customer/showCustomerForm">Customer Form</a>
+
+<br>
+<hr>
+Context root: ${pageContext.request.contextPath} 
 </body>
 </html>

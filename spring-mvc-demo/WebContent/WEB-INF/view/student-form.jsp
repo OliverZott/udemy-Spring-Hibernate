@@ -33,13 +33,9 @@
 		
 		<br>
 		and also:
-		
-		C 
 		<form:radiobutton path="favoriteLanguage" value="C"/>			<!-- Spring calls "student.setFavoriteLanguage" -->
 		
 		<br><br>
-		
-		Operating Systems: 
 		
 		Linux: <form:checkbox path="operatingSystems" value="Linux"/>
 		Windows: <form:checkbox path="operatingSystems" value="Windows"/>
