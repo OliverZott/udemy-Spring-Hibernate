@@ -28,7 +28,7 @@
 
 	<hr>
 	
-	<a href="/spring-mvc-demo/">Back to main-menu</a>
-	
+	<!-- <a href="/spring-mvc-demo/">Back to main-menu</a>  -->
+	<a href="${ pageContext.request.contextPath }">Back to home</a>
 </body>
 </html>
