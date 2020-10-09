@@ -8,7 +8,7 @@ public class Customer {
 	private String firstName;
 	
 	@NotNull(message = "This field is required")
-	@Size(min = 2, message = "At least two characters")
+	@Size(min = 3, message = "At least three characters")
 	private String lastName;
 	
 

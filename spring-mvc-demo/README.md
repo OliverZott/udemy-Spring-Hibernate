@@ -65,7 +65,7 @@
     	- Hibernate [(Hibernate Validator)](http://hibernate.org/validator/) original ORM also JSR   
     	- `BindingResult` / Errors right behind `@Valid @ModelAttribute...`  [doc](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web.html#mvc-ann-methods)  
     	- **Developement process** (validation in model (class) -> error msg in template (html) -> validation in controller -> confirmation page update)  
-    	- 
+    	- @InitBinder (Advanced: pre-process all web-requests)
       
         
         
