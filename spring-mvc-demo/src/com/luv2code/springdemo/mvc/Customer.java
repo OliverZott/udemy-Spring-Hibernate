@@ -10,10 +10,13 @@ public class Customer {
     @Size(min = 3, message = "At least three characters")
     private String lastName;
 
+    /**
+     * For @NotNull to work the type has to be "Integer" so it can be trimmed to null!!!
+     */
+    @NotNull(message = "This field is required")
     @Min(value = 2, message = "wtf, you got two free!!!")
     @Max(value = 10, message = "Ey, 10 max buddy!")
-    private int freePasses;
-
+    private Integer freePasses;
 
     /**
      * Pattern works only on String-type !
@@ -39,19 +42,17 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public int getFreePasses() {
+    public Integer getFreePasses() {
         return freePasses;
     }
 
-    public void setFreePasses(int freePasses) {
+    public void setFreePasses(Integer freePasses) {
         this.freePasses = freePasses;
     }
-
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
-
 
     public String getPostalCode() {
         return postalCode;
