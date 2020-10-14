@@ -1,5 +1,7 @@
 package com.luv2code.springdemo.mvc;
 
+import com.luv2code.springdemo.mvc.validation.CourseCode;
+
 import javax.validation.constraints.*;
 
 public class Customer {
@@ -24,6 +26,14 @@ public class Customer {
      */
     @Pattern(regexp = "^([a-zA-Z0-9]{5})", message = "only 5 chars/digits")
     private String postalCode;
+
+
+    /**
+     * Custom validation!
+     * No attributes, using default values
+     */
+    @CourseCode(value = "TOPS", message = "Must be Zwuuuuuuuu related!")
+    private String courseCode;
 
 
     public String getFirstName() {
@@ -56,5 +66,13 @@ public class Customer {
 
     public String getPostalCode() {
         return postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }
