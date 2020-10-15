@@ -3,10 +3,11 @@ package com.luv2code.springdemo.mvc.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import javax.validation.constraints.Null;
+import java.util.Arrays;
 
 public class CourseCodeConstraintValidator implements ConstraintValidator<CourseCode, String> {
 
-    private String coursePrefix;
+    private String[] coursePrefix;
 
     @Override
     public void initialize(CourseCode constraint) {
@@ -20,10 +21,22 @@ public class CourseCodeConstraintValidator implements ConstraintValidator<Course
     @Override
     public boolean isValid(String obj, ConstraintValidatorContext context) {
 
-        boolean result;
+        boolean result = false;
+
+        /* Some testing
+        String[] bla = coursePrefix;
+        String blub = Arrays.toString(coursePrefix);
+        */
 
         if (obj != null) {
-            result = obj.startsWith(coursePrefix);
+            for (String word : coursePrefix) {
+                result = obj.startsWith(word);
+
+                if (result) {
+                    break;
+                }
+            }
+
         } else {
             result = true;      // cause optional
         }

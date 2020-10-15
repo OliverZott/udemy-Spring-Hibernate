@@ -32,7 +32,7 @@ public class Customer {
      * Custom validation!
      * No attributes, using default values
      */
-    @CourseCode(value = "TOPS", message = "Must be Zwuuuuuuuu related!")
+    @CourseCode(message = "Must match the default")
     private String courseCode;
 
 
