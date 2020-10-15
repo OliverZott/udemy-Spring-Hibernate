@@ -6,7 +6,7 @@ import javax.validation.constraints.Null;
 
 public class CourseCodeConstraintValidator implements ConstraintValidator<CourseCode, String> {
 
-    private String coursePrefix = "LUV";
+    private String coursePrefix;
 
     @Override
     public void initialize(CourseCode constraint) {
