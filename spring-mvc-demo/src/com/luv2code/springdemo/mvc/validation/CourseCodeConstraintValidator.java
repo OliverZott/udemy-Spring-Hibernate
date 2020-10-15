@@ -4,6 +4,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import javax.validation.constraints.Null;
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class CourseCodeConstraintValidator implements ConstraintValidator<CourseCode, String> {
 
@@ -29,6 +30,13 @@ public class CourseCodeConstraintValidator implements ConstraintValidator<Course
         */
 
         if (obj != null) {
+
+            /*
+            Stream version not working yet cause wanna check start
+            https://stackoverflow.com/questions/1128723/how-do-i-determine-whether-an-array-contains-a-particular-value-in-java
+             */
+            // Stream<String> stream = Arrays.stream(coursePrefix);
+
             for (String word : coursePrefix) {
                 result = obj.startsWith(word);
 
