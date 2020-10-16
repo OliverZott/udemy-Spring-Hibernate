@@ -22,8 +22,20 @@ Now new dir in project ("Reference Libraries" in Eclipse)
 1. Add Hibernate Config file `hibernate.cfg.xml` ...tell hibernate hot to connect to database  
 [Session context/management](https://stackoverflow.com/questions/34859136/using-hibernate-thread-session-context-in-production)
 
-1. Annotate Java Class  `Entity Class`
-    1. Map class to db-table
-    1. Map fields to table-columns
+1. Annotate Java Class  `Entity Class`  
+**Best Practice:** Use JPA Annotations (API in package: `javax.persistence`)
+    - Map class to db-table
+    - Map fields to table-columns  
+    
+1. Develop code to perform db-operations  
+    - `SessionFactory` read hibernate config, creates sessions, only once created
+    - `Session` wraps JDBC-connection , used to save/retrieve objects, short-lived object
 
-1. Develop code to perform db-operations
+
+<br>
+<br>
+<br>
+
+## Remarks:
+- [try with resources management](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
+- [Create table with java code](https://www.dineshonjava.com/hibernate/hbm2ddl-configuration-and-name/)
