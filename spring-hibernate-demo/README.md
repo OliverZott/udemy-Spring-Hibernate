@@ -30,8 +30,9 @@ Now new dir in project ("Reference Libraries" in Eclipse)
 1. Develop code to perform db-operations  
     - `SessionFactory` read hibernate config, creates sessions, only once created
     - `Session` wraps JDBC-connection , used to save/retrieve objects, short-lived object
-    - save data to db `session.save()`
-    - retrieve data from db ``
+    - SAVE data to db `session.save()`
+    - GET data from db `session.get()`
+    - CRUD / Hibernate-QUERY 
 
 
 1. SQL
