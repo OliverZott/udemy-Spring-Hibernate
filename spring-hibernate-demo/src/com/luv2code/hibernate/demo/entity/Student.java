@@ -3,16 +3,14 @@ package com.luv2code.hibernate.demo.entity;
 // javax is from JPA which is standard interface that hibernate implements
 // https://de.wikipedia.org/wiki/Java_Persistence_API
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "student")
 public class Student {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)     // standard for MySQL
     @Column(name = "id")
     private int id;
 

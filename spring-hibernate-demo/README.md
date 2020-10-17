@@ -30,7 +30,19 @@ Now new dir in project ("Reference Libraries" in Eclipse)
 1. Develop code to perform db-operations  
     - `SessionFactory` read hibernate config, creates sessions, only once created
     - `Session` wraps JDBC-connection , used to save/retrieve objects, short-lived object
+    - save data to db `session.save()`
+    - retrieve data from db ``
 
+
+1. SQL
+    1. **Primary Key**  
+        - unique / not-null
+        - Alter primary key `ALTER TABLE hb_student_tracker.student AUTO_INCREMENT=3000`
+        - delete data `TRUNCATE hb_student_tracker.student`
+    
+    
+    
+    
 
 <br>
 <br>
