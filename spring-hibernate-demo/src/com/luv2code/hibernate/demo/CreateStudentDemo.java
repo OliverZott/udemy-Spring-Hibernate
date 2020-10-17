@@ -5,7 +5,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CreateStudentDemo {
+
+
 
     public static void main(String[] args) {
 
@@ -16,6 +21,12 @@ public class CreateStudentDemo {
                 .buildSessionFactory();
 
 
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(new Student("Daffy", "Duck", "duffyD@ente.com"));
+        studentList.add(new Student("John", "Wick", "duffyD@mail.org"));
+        studentList.add(new Student("Olli", "Zwu", "OZ@velosaurus.com"));
+        studentList.add(new Student("Lena", "Zwu", "LZ@velosaurus.com"));
+
         // use session object to sava POJO
         try (sessionFactory) {
 
@@ -23,13 +34,16 @@ public class CreateStudentDemo {
             Session session = sessionFactory.getCurrentSession();
 
             // create student object (POJO)
-            Student newStudent = new Student("Olli", "Zwuuu", "ollgu@velosaurus.com");
+            Student newStudent = new Student("John", "Doe", "john_d@mail.com");
 
             // start transaction
             session.beginTransaction();
 
             // save pojo
-            session.save(newStudent);
+            for (Student student : studentList) {
+                session.save(student);
+            }
+
 
             // commit transaction
             session.getTransaction().commit();
