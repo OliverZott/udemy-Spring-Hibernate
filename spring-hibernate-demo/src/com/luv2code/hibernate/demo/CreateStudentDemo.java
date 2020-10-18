@@ -22,10 +22,10 @@ public class CreateStudentDemo {
 
 
         List<Student> studentList = new ArrayList<>();
-        studentList.add(new Student("Daffy", "Duck", "duffyD@ente.com"));
-        studentList.add(new Student("John", "Wick", "duffyD@mail.org"));
-        studentList.add(new Student("Olli", "Zwu", "OZ@velosaurus.com"));
-        studentList.add(new Student("Lena", "Zwu", "LZ@velosaurus.com"));
+         studentList.add(new Student("Sigi", "Zwu", "siggiii@verlosaurus.com"));
+        // studentList.add(new Student("John", "Wick", "duffyD@mail.org"));
+        // studentList.add(new Student("Olli", "Zwu", "OZ@velosaurus.com"));
+        // studentList.add(new Student("Lena", "Zwu", "LZ@velosaurus.com"));
 
         // use session object to sava POJO
         try (sessionFactory) {
@@ -41,7 +41,8 @@ public class CreateStudentDemo {
 
             // save pojo
             for (Student student : studentList) {
-                session.save(student);
+                int id = (int) session.save(student);
+                System.out.println("\n\n ID from return value: " + id);
             }
 
 

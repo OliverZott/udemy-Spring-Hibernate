@@ -27,13 +27,16 @@ Now new dir in project ("Reference Libraries" in Eclipse)
     - Map class to db-table
     - Map fields to table-columns  
     
-1. Develop code to perform db-operations  
+1. HQL - Develop code to perform db-operations  
     - `SessionFactory` read hibernate config, creates sessions, only once created
     - `Session` wraps JDBC-connection , used to save/retrieve objects, short-lived object
-    - SAVE data to db `session.save()`
-    - GET data from db `session.get()`
-    - CRUD / Hibernate-QUERY 
-
+    - CREATE `session.save()`
+    - GET `session.get()` or with query 
+    - UPDATE
+        - `session.createQuery("HQL").getResultList();`  
+        - `session.createQuery("HQL").executeUpdate()`  (single update just get and commit)
+    - DELETE `session.delete()` or with query 
+    - [Criteria vs HQL](https://sites.google.com/site/anaki808built/hibernate/when-to-use-hql-or-criteria-queries)
 
 1. SQL
     1. **Primary Key**  
