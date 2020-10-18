@@ -45,7 +45,13 @@ Now new dir in project ("Reference Libraries" in Eclipse)
         - delete data `TRUNCATE hb_student_tracker.student`
     
     
-    
+<br>
+<br>
+<br>
+
+## Complete Project Examples
+https://javawebtutor.com/articles/spring/spring-mvc-hibernate-crud-example.php    
+http://zetcode.com/spring/propertyplaceholder/   
     
 
 <br>
