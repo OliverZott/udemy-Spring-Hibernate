@@ -6,4 +6,6 @@ public interface EmployeeDao {
 
     void addEmployee(Employee employee);
 
+    Employee getEmployee(int id);
+
 }

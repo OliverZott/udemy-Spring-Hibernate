@@ -6,4 +6,6 @@ public interface EmployeeService {
 
     void createEmployee(Employee employee);
 
+    Employee readEmployee(int id);
+
 }

@@ -5,7 +5,7 @@ import main.java.entity.Employee;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
-    private EmployeeDaoImpl employeeDao;
+    private final EmployeeDaoImpl employeeDao;
 
     public EmployeeServiceImpl(EmployeeDaoImpl employeeDao) {
         this.employeeDao = employeeDao;
@@ -14,5 +14,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void createEmployee(Employee employee) {
         this.employeeDao.addEmployee(employee);
+    }
+
+    @Override
+    public Employee readEmployee(int id) {
+        return this.employeeDao.getEmployee(id);
     }
 }
