@@ -5,14 +5,15 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class CreateStudentDemo {
 
 
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         // create session factory
         SessionFactory sessionFactory = new Configuration()
@@ -21,8 +22,11 @@ public class CreateStudentDemo {
                 .buildSessionFactory();
 
 
+        String dateString = "07/09/2019";
+        Date theDateOfBirth = DateUtils.parseDate(dateString);
+
         List<Student> studentList = new ArrayList<>();
-         studentList.add(new Student("Sigi", "Zwu", "siggiii@verlosaurus.com"));
+        studentList.add(new Student("Sigi", "Zwu", "siggiii@verlosaurus.com", theDateOfBirth));
         // studentList.add(new Student("John", "Wick", "duffyD@mail.org"));
         // studentList.add(new Student("Olli", "Zwu", "OZ@velosaurus.com"));
         // studentList.add(new Student("Lena", "Zwu", "LZ@velosaurus.com"));
@@ -34,7 +38,7 @@ public class CreateStudentDemo {
             Session session = sessionFactory.getCurrentSession();
 
             // create student object (POJO)
-            Student newStudent = new Student("John", "Doe", "john_d@mail.com");
+            Student newStudent = new Student("John", "Doe", "john_d@mail.com", theDateOfBirth);
 
             // start transaction
             session.beginTransaction();

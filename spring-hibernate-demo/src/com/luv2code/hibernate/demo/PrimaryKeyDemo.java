@@ -5,6 +5,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.text.ParseException;
+
 public class PrimaryKeyDemo {
 
 
@@ -20,11 +22,13 @@ public class PrimaryKeyDemo {
 
             Session session = sessionFactory.getCurrentSession();
 
-            Student newStudent = new Student("John", "Wick", "JW@mail.com");
+            Student newStudent = new Student("John", "Wick", "JW@mail.com", DateUtils.parseDate("23/011/1974"));
 
             session.beginTransaction();
             session.save(newStudent);
             session.getTransaction().commit();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
     }

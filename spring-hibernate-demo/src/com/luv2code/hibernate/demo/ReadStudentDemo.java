@@ -5,6 +5,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.text.ParseException;
+import java.util.Date;
+
 public class ReadStudentDemo {
 
     public static void main(String[] args) {
@@ -17,7 +20,11 @@ public class ReadStudentDemo {
         try (sessionFactory) {
             Session session = sessionFactory.getCurrentSession();
 
-            Student putStudent = new Student("Donald", "Duck", "dd@entenhausen.org");
+
+            String dateString = "07/09/2019";
+            Date theDateOfBirth = DateUtils.parseDate(dateString);
+
+            Student putStudent = new Student("Donald", "Duck", "dd@entenhausen.org", theDateOfBirth);
             System.out.printf("\nNew Student %s with initial ID=%s", putStudent.getFirstName(), putStudent.getId());
 
             session.beginTransaction();
@@ -44,6 +51,9 @@ public class ReadStudentDemo {
             session2.getTransaction().commit();
 
             System.out.println("\n" + retrievedStudent.toString());
+
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 }

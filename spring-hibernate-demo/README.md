@@ -37,12 +37,20 @@ Now new dir in project ("Reference Libraries" in Eclipse)
         - `session.createQuery("HQL").executeUpdate()`  (single update just get and commit)
     - DELETE `session.delete()` or with query 
     - [Criteria vs HQL](https://sites.google.com/site/anaki808built/hibernate/when-to-use-hql-or-criteria-queries)
+    
+1. DateTime in table  
+    - Alter database table  
+    - Class for parsing&formatting dates `DateUtils`   
+    - Add field to Class
 
 1. SQL
     1. **Primary Key**  
         - unique / not-null
         - Alter primary key `ALTER TABLE hb_student_tracker.student AUTO_INCREMENT=3000`
         - delete data `TRUNCATE hb_student_tracker.student`
+    1. **DateTime** vs **Timestamp** [(Link)](https://www.tutorialspoint.com/What-is-the-difference-between-MySQL-DATETIME-and-TIMESTAMP-data-type)
+ 
+
     
     
 <br>
