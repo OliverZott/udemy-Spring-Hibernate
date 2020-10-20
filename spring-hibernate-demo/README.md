@@ -17,6 +17,7 @@ https://dev.mysql.com/downloads/connector/j/
 [Eclipse](https://stackoverflow.com/questions/3280353/how-to-import-a-jar-in-eclipse)
 Now new dir in project ("Reference Libraries" in Eclipse)
 
+<br>
 
 ## Hibernate Development Process
 1. Add Hibernate Config file `hibernate.cfg.xml` ...tell hibernate hot to connect to database  
@@ -49,7 +50,26 @@ Now new dir in project ("Reference Libraries" in Eclipse)
         - Alter primary key `ALTER TABLE hb_student_tracker.student AUTO_INCREMENT=3000`
         - delete data `TRUNCATE hb_student_tracker.student`
     1. **DateTime** vs **Timestamp** [(Link)](https://www.tutorialspoint.com/What-is-the-difference-between-MySQL-DATETIME-and-TIMESTAMP-data-type)
- 
+
+<br>
+
+## Advanced Mapping
+1. One-To-One  
+    - Database table definition `foreign key`
+    - Map classes correctly  `@OneToOne` `@JoinColumn(name=...)`
+    
+1. Basics  
+    - Entity Lifecycle [(Link)](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/7667988#questions)
+        - Detach  
+        - Merge  
+        - Persist
+        - Remove  
+        - Refresh  
+    - Cascade Types [(Links)](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/7667990#questions)
+        - "sync" related entity (respective foreign key)
+        - Persist, Remove, Refresh, Detach, Merge, All   ...can use various  
+
+
 
     
     
