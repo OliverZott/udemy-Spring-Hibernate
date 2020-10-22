@@ -24,7 +24,8 @@ Now new dir in project ("Reference Libraries" in Eclipse)
 [Session context/management](https://stackoverflow.com/questions/34859136/using-hibernate-thread-session-context-in-production)
 
 1. Annotate Java Class  `Entity Class`  
-**Best Practice:** Use JPA Annotations (API in package: `javax.persistence`)
+**Best Practice:** Use JPA Annotations (API in package: `javax.persistence`)  
+
     - Map class to db-table
     - Map fields to table-columns  
     
@@ -60,15 +61,17 @@ Now new dir in project ("Reference Libraries" in Eclipse)
     
 1. Basics  
     - Entity Lifecycle [(Link)](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/7667988#questions)
-        - Detach  
-        - Merge  
-        - Persist
-        - Remove  
-        - Refresh  
+        - Detach, Merge, Persist, Remove, Refresh  
+        - [(Link1)](https://www.objectdb.com/java/jpa/persistence/managed) 
+        [(Link2)](https://www.baeldung.com/hibernate-entity-lifecycle)
     - Cascade Types [(Links)](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/7667990#questions)
         - "sync" related entity (respective foreign key)
         - Persist, Remove, Refresh, Detach, Merge, All   ...can use various  
-
+        - 
+    - Reverse Engineer Diagram !
+    - **Question**  
+        - [Sql statement](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/7668004#questions/11992872)
+        - [IntelliJ Debugging](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/7668004#questions/12576376)
 
 
     
@@ -87,5 +90,8 @@ http://zetcode.com/spring/propertyplaceholder/
 <br>
 
 ## Remarks:
+- **JPA** `Entity Manager` vs **Hibernate** `Session`
 - [try with resources management](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
 - [Create table with java code](https://www.dineshonjava.com/hibernate/hbm2ddl-configuration-and-name/)
+- [MySQL Indexing](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html)
+- [MySql index and foreign keys](https://dev.mysql.com/doc/refman/5.7/en/create-table.html#create-table-indexes-keys)
