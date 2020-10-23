@@ -30,7 +30,7 @@ public class DeleteDemo {
 
 
             // get entity-instance by id
-            int theId = 2;
+            int theId = 3;
             Instructor instructor = session.get(Instructor.class, theId);
             System.out.println("Found Entity-Instance: " + instructor);
             System.out.println(instructor);
@@ -39,12 +39,12 @@ public class DeleteDemo {
             //
             // Note: Will ALSO save detail-object because
             // of 'CascadeType.ALL'
-            System.out.println("Deleting Entity-Instance.");
+            System.out.println("Deleting Entity-Instance:");
 
             if (instructor != null) {
                 session.delete(instructor);
             } else {
-                System.out.println("\n\n WTF");
+                System.out.println("\nSeems like there is no entry!");
             }
 
 

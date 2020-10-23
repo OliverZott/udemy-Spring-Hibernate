@@ -19,29 +19,36 @@ public class BidirDemo {
                 .addAnnotatedClass(InstructorDetail.class)
                 .buildSessionFactory();
 
+        Session session = sessionFactory.getCurrentSession();
 
-        try (sessionFactory) {
-
-            Session session = sessionFactory.getCurrentSession();
-
+        try {
             session.beginTransaction();
 
             // get instructor-detail entity-instance
-            int id = 1;
+            /*
+            int id = 18;
             InstructorDetail instructorDetail = session.get(InstructorDetail.class, id);
-            Instructor instructor = instructorDetail.getInstructor();
+            System.out.println("\nInstructor: " + instructorDetail.getInstructor());
+            System.out.println("\nInstructor Detail: " + instructorDetail);
+             //*/
+
 
             // get instructor-detail entity-instance (Query - Version)
-
             List instArray;
-            instArray = session.createQuery("from InstructorDetail i where id=3").getResultList();
-            Instructor instructor2 = instructorDetail.getInstructor();
+            instArray = session.createQuery("from InstructorDetail").getResultList();
+            instArray.stream().forEach(System.out::println);
+            // System.out.println("\n\nInstructor Detail: " + instArray.get(1);
 
-            System.out.println("\n\nInstructor Detail: " + instArray.get(0));
-            System.out.println("\n\nInstructor : " + instructor2);
+
+
 
             session.getTransaction().commit();
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+            sessionFactory.close();
         }
 
     }

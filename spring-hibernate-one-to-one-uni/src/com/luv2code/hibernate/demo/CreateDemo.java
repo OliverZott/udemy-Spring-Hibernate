@@ -27,10 +27,10 @@ public class CreateDemo {
 
             // create objects
             Instructor tempInstructor =
-                    new Instructor("Siggi", "Zwu", "sigbert@verlosaurus.org");
+                    new Instructor("Lena", "Zwu", "lenchen@verlosaurus.org");
 
             InstructorDetail tempInstructorDetail =
-                    new InstructorDetail("htp://Siggi.org/FTW", "Shredding");
+                    new InstructorDetail("htp://www.velosaurus.org", "Shredding");
 
             // Associate the objects
             tempInstructor.setInstructorDetail(tempInstructorDetail);
