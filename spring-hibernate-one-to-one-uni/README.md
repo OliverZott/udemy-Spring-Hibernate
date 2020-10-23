@@ -29,7 +29,8 @@ Now new dir in project ("Reference Libraries" in Eclipse)
     - Map class to db-table
     - Map fields to table-columns  
     
-1. HQL - Develop code to perform db-operations  
+1. HQL - Develop code to perform db-operations [(HQL Syntax)](https://www.tutorialspoint.com/hibernate/hibernate_query_language.htm)
+
     - `SessionFactory` read hibernate config, creates sessions, only once created
     - `Session` wraps JDBC-connection , used to save/retrieve objects, short-lived object
     - CREATE `session.save()`

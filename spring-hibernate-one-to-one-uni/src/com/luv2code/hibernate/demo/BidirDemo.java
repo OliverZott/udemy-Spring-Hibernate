@@ -22,9 +22,10 @@ public class BidirDemo {
         Session session = sessionFactory.getCurrentSession();
 
         try {
+
             session.beginTransaction();
 
-            // get instructor-detail entity-instance
+            // READ single instructor-detail entity-instance
             /*
             int id = 18;
             InstructorDetail instructorDetail = session.get(InstructorDetail.class, id);
@@ -33,13 +34,25 @@ public class BidirDemo {
              //*/
 
 
-            // get instructor-detail entity-instance (Query - Version)
+            // READ all instructor-detail entity-instance (Query - Version)
+            /*
             List instArray;
             instArray = session.createQuery("from InstructorDetail").getResultList();
             instArray.stream().forEach(System.out::println);
             // System.out.println("\n\nInstructor Detail: " + instArray.get(1);
+            //*/
 
 
+            // DELETE cascade (single direction)
+            //
+            // remove association to break bi-dir link
+            InstructorDetail instructorDetail = session.get(InstructorDetail.class, 4);
+
+            instructorDetail.getInstructor().setInstructorDetail(null);
+            session.delete(instructorDetail);
+
+            //session.createQuery("delete from InstructorDetail where id=4").executeUpdate();
+            //System.out.println("\nDeleted!");
 
 
             session.getTransaction().commit();
