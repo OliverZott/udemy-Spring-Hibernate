@@ -6,8 +6,9 @@ import com.luv2code.hibernate.demo.entity.InstructorDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
-public class CreateCourseDemo {
+public class DeleteCourseDemo {
 
 
     public static void main(String[] args) {
@@ -21,21 +22,20 @@ public class CreateCourseDemo {
 
         Session session = sessionFactory.getCurrentSession();
 
+        //noinspection TryFinallyCanBeTryWithResources
         try {
             session.beginTransaction();
 
-
-            Course tempCourse1 = new Course("Gaps-Basics");
-            Course tempCourse2 = new Course("BikePark-Advanced");
-
-            Instructor dbInstructor = session.get(Instructor.class, 1);
-            dbInstructor.addCourse(tempCourse1);
-            dbInstructor.addCourse(tempCourse2);
+            // Hibernate Query Language (HQL) version for more flexibility (conditions)
+            //
+            Query query = session.createQuery("delete Course where id= :tmpId");
+            query.setParameter("tmpId", 11);
+            query.executeUpdate();
 
 
-            System.out.println("\nCreating Course [" + tempCourse1 + tempCourse2 + "] and add to Instructor: " + dbInstructor);
-            session.save(tempCourse1);
-            session.save(tempCourse2);
+            //
+            Course tmpCourse = session.get(Course.class, 13);
+            session.delete(tmpCourse);
 
 
             session.getTransaction().commit();

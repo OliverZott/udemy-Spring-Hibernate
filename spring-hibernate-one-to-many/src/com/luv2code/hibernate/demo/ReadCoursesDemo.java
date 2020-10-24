@@ -35,7 +35,7 @@ public class ReadCoursesDemo {
             instructorList.forEach(System.out::println);
 
             Instructor dbInstructor = session.get(Instructor.class, 2);
-            System.out.println(dbInstructor.getCourses());
+            System.out.println("\nCourses of specific instructor: " + dbInstructor.getCourses());
 
 
 

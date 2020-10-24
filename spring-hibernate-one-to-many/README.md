@@ -39,6 +39,7 @@ Now new dir in project ("Reference Libraries" in Eclipse)
         - `session.createQuery("HQL").getResultList();`  
         - `session.createQuery("HQL").executeUpdate()`  (single update just get and commit)
     - DELETE `session.delete()` or with query 
+        [(3 ways to delete)](https://www.codejava.net/frameworks/hibernate/hibernate-basics-3-ways-to-delete-an-entity-from-the-datastore)
     - [Criteria vs HQL](https://sites.google.com/site/anaki808built/hibernate/when-to-use-hql-or-criteria-queries)
     
 1. DateTime in table  
