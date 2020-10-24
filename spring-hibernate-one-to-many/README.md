@@ -53,12 +53,20 @@ Now new dir in project ("Reference Libraries" in Eclipse)
         - delete data `TRUNCATE hb_student_tracker.student`
     1. **DateTime** vs **Timestamp** [(Link)](https://www.tutorialspoint.com/What-is-the-difference-between-MySQL-DATETIME-and-TIMESTAMP-data-type)
 
+#### Best Practice 
+https://thorben-janssen.com/hibernate-best-practices/  
+https://thorben-janssen.com/hibernate-best-practices-for-readable-and-maintainable-code/
+
 <br>
 
 ## Advanced Mapping
 1. One-To-One  
     - Database table definition `foreign key`
     - Map classes correctly  `@OneToOne` `@JoinColumn(name=...)`
+
+1. One-To-Many  
+    - `@ManyToOne`  
+    - `List<>` field with `add()` method
     
 1. Basics  
     - Entity Lifecycle [(Link)](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/7667988#questions)
@@ -92,6 +100,7 @@ http://zetcode.com/spring/propertyplaceholder/
 
 ## Remarks:
 - **JPA** `Entity Manager` vs **Hibernate** `Session`
+- **List<>** vs **ArrayList<>**  [(Link)](https://techdifferences.com/difference-between-list-and-arraylist-in-java.html)
 - [try with resources management](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
 - [Create table with java code](https://www.dineshonjava.com/hibernate/hbm2ddl-configuration-and-name/)
 - [MySQL Indexing](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html)
