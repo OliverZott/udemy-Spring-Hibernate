@@ -6,8 +6,9 @@ import com.luv2code.hibernate.demo.entity.InstructorDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
-public class EagerLazyDemo {
+public class FetchJoinDemo {
 
     public static void main(String[] args) {
 
@@ -24,8 +25,13 @@ public class EagerLazyDemo {
         try {
             session.beginTransaction();
 
-            // get single instructor
-            Instructor dbInstructor = session.get(Instructor.class, 1);
+            Query<Instructor> query = session.createQuery("select i from Instructor i JOIN FETCH i.courses where i.id=:theInstructorId", Instructor.class);
+
+            int theId = 2;
+            query.setParameter("theInstructorId", theId);
+
+            Instructor dbInstructor = query.getSingleResult();
+
 
             System.out.println("\nInstructor: " + dbInstructor);
 
@@ -40,8 +46,8 @@ public class EagerLazyDemo {
             System.out.println("\nCourses of specific instructor: " + dbInstructor.getCourses());
 
         } finally {
-            sessionFactory.close();
             session.close();
+            sessionFactory.close();
         }
     }
 }
