@@ -27,7 +27,8 @@ public class Instructor {
     private InstructorDetail instructorDetail;
 
     // no DELETE because dont want delete instructor if deleting course
-    @OneToMany(mappedBy = "instructor",
+    @OneToMany(fetch = FetchType.LAZY,
+            mappedBy = "instructor",
             cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     private List<Course> courses;
 
