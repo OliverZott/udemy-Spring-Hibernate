@@ -61,6 +61,17 @@ https://thorben-janssen.com/hibernate-best-practices-for-readable-and-maintainab
 <br>
 
 ## Advanced Mapping
+- https://stackoverflow.com/questions/55400177/hibernate-jpa-mappedby-vs-owner-of-the-relation-cascades
+- https://www.baeldung.com/jpa-joincolumn-vs-mappedby
+- https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/9195648#questions/11856864
+- https://vladmihalcea.com/the-best-way-to-map-a-onetomany-association-with-jpa-and-hibernate/
+- https://stackoverflow.com/questions/25053792/who-is-owner-in-association-with-jpa-and-hibernate
+
+
+- Owning side identification: 
+    - table contains foreign_key
+    - mappedBy refers to owner (thus is placed on child side)
+    
 1. One-To-One  
     - Database table definition `foreign key`
     - Map classes correctly  `@OneToOne` `@JoinColumn(name=...)`

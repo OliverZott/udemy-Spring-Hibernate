@@ -23,15 +23,24 @@ public class CreateReviewDemo {
 
         Session session = sessionFactory.getCurrentSession();
 
+        //noinspection TryFinallyCanBeTryWithResources
         try {
             session.beginTransaction();
 
             //Instructor tempInstructor = new Instructor("Olli", "Zott", "olli@velosaurus.org");
-            Course tempCourse = new Course("BikePark-Advanced");
-            Review tempReview = new Review("This course is awesome as well!");
+            Course tempCourse = new Course("Alpine-Expert");
+            Review tempReview = new Review("This Alpine-expert course is awesome as HELL!");
 
             //tempInstructor.addCourse(tempCourse);
+
             tempCourse.addReview(tempReview);
+            tempCourse.addReview(new Review("Nice alpine bike experience."));
+            tempCourse.addReview(new Review("Shitload of fun!!!"));
+
+            // Due to Cascading in course-entity also reviews will be stored!
+            session.save(tempCourse);
+
+
 
             //Instructor dbInstructor = session.get(Instructor.class, 1);
             //dbInstructor.addCourse(tempCourse);
@@ -39,8 +48,9 @@ public class CreateReviewDemo {
 
             System.out.println("\nCreating Course [" + tempCourse + "] and Creating Review: " + tempReview);
             //session.save(tempInstructor);
-            session.save(tempCourse);
-            //session.save(tempCourse2);
+            // session.save(tempReview);
+
+
 
 
             session.getTransaction().commit();
