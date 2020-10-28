@@ -8,7 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class CreateReviewDemo {
+public class DeleteReviewDemo {
 
 
     public static void main(String[] args) {
@@ -28,21 +28,19 @@ public class CreateReviewDemo {
             session.beginTransaction();
 
 
-            //Instructor tempInstructor = new Instructor("Olli", "Zott", "olli@velosaurus.org");
-            Course tempCourse = new Course("Alpine-Expert");
-            Review tempReview = new Review("This Alpine-expert course is awesome as HELL!");
+            /*
+            // delete review
+            int id = 6;
+            Review tmpReview= session.get(Review.class, id);
+            System.out.println("Deleting Review: " + tmpReview);
+            session.delete(tmpReview);
+            */
 
-            //tempInstructor.addCourse(tempCourse);
 
-            tempCourse.addReview(tempReview);
-            tempCourse.addReview(new Review("Nice alpine bike experience."));
-            tempCourse.addReview(new Review("Shitload of fun!!!"));
-
-            // Due to Cascading in course-entity also reviews will be stored!
-            session.save(tempCourse);
-
-            // session.save(tempInstructor);
-            // session.save(tempReview);
+            // delete course will delete reviews as well (cascading)
+            int courseId = 14;
+            Course course = session.get(Course.class, courseId);
+            session.delete(course);
 
 
             session.getTransaction().commit();

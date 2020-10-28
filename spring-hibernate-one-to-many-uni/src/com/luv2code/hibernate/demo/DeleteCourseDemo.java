@@ -33,6 +33,9 @@ public class DeleteCourseDemo {
             session.delete(tmpCourse);
             System.out.println("Deleted course successfully!");
 
+
+
+
             // this solution is not working ?!?!
             /*
             Query query = session.createQuery("delete Course where id= :tmpId");
