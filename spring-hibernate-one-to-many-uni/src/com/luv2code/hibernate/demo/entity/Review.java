@@ -14,11 +14,15 @@ public class Review {
     @Column(name = "comment")
     private String comment;
 
-    // course is parent entity
+    /*
+    // This would be a Bi-Directional implementation!!
+    // Here course would be parent entity
     //  - "persist"  ... when parent (course) saved, reviews will also be saved
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
+            fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id")
     private Course course;
+     */
 
     public Review() {
     }
@@ -44,6 +48,7 @@ public class Review {
         this.comment = comment;
     }
 
+    /*
     public Course getCourse() {
         return course;
     }
@@ -51,4 +56,6 @@ public class Review {
     public void setCourse(Course course) {
         this.course = course;
     }
+    */
+
 }

@@ -16,14 +16,16 @@ public class Course {
     @Column(name = "title")
     private String title;
 
-    // @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "instructor_id")
     private Instructor instructor;
 
-    @OneToMany(mappedBy = "course",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER)
+
+    // no mappedBy here because its uni-directional
+    // Owning side is review
+    // CascadeType.All because we wanna delete reviews if we delete course
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id")
     private List<Review> reviews;
 
 
@@ -47,7 +49,7 @@ public class Course {
             this.reviews = new ArrayList<>();
         }
         this.reviews.add(review);
-        review.setCourse(this);
+        // review.setCourse(this);   // only used if bi-directional
     }
 
     public int getId() {
