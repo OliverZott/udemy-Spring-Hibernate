@@ -4,7 +4,9 @@ package com.luv2code.hibernate.demo.entity;
 // https://de.wikipedia.org/wiki/Java_Persistence_API
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "student")
@@ -30,10 +32,18 @@ public class Student {
     private Date dateOfBirth;
      */
 
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE,
+                    CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(name = "course_student",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id"))
+    private List<Course> courses;
+
+
     public Student() {
 
     }
-
 
     public Student(String firstName, String lastName, String email, Date dob) {
         this.firstName = firstName;
@@ -51,6 +61,13 @@ public class Student {
                 // ", dateOfBirth=" + dateOfBirth + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public void addCourse(Course course) {
+        if (this.courses == null) {
+            this.courses = new ArrayList<>();
+        }
+        this.courses.add(course);
     }
 
     public int getId() {
@@ -83,6 +100,14 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 
     /*

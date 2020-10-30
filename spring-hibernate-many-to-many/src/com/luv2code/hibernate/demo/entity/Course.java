@@ -29,6 +29,15 @@ public class Course {
     private List<Review> reviews;
 
 
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE,
+                    CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(name = "course_student",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id"))
+    private List<Student> students;
+
+
     public Course() {
     }
 
@@ -50,6 +59,13 @@ public class Course {
         }
         this.reviews.add(review);
         // review.setCourse(this);   // only used if bi-directional
+    }
+
+    public void addStudent(Student student) {
+        if (students == null) {
+            this.students = new ArrayList<>();
+        }
+        this.students.add(student);
     }
 
     public int getId() {
@@ -82,5 +98,13 @@ public class Course {
 
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 }
