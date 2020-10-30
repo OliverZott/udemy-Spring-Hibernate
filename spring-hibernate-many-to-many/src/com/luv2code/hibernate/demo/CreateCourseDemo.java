@@ -3,12 +3,11 @@ package com.luv2code.hibernate.demo;
 import com.luv2code.hibernate.demo.entity.Course;
 import com.luv2code.hibernate.demo.entity.Instructor;
 import com.luv2code.hibernate.demo.entity.InstructorDetail;
-import com.luv2code.hibernate.demo.entity.Review;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class CreateReviewDemo {
+public class CreateCourseDemo {
 
 
     public static void main(String[] args) {
@@ -18,31 +17,25 @@ public class CreateReviewDemo {
                 .addAnnotatedClass(Instructor.class)
                 .addAnnotatedClass(InstructorDetail.class)
                 .addAnnotatedClass(Course.class)
-                .addAnnotatedClass(Review.class)
                 .buildSessionFactory();
 
         Session session = sessionFactory.getCurrentSession();
 
-        //noinspection TryFinallyCanBeTryWithResources
         try {
             session.beginTransaction();
 
 
-            //Instructor tempInstructor = new Instructor("Olli", "Zott", "olli@velosaurus.org");
-            Course tempCourse = new Course("Alpine-Expert");
-            Review tempReview = new Review("This Alpine-expert course is awesome as HELL!");
+            Course tempCourse1 = new Course("Gaps-Basics");
+            Course tempCourse2 = new Course("BikePark-Advanced");
 
-            //tempInstructor.addCourse(tempCourse);
+            Instructor dbInstructor = session.get(Instructor.class, 1);
+            dbInstructor.addCourse(tempCourse1);
+            dbInstructor.addCourse(tempCourse2);
 
-            tempCourse.addReview(tempReview);
-            tempCourse.addReview(new Review("Nice alpine bike experience."));
-            tempCourse.addReview(new Review("Shitload of fun!!!"));
 
-            // Due to Cascading in course-entity also reviews will be stored!
-            session.save(tempCourse);
-
-            // session.save(tempInstructor);
-            // session.save(tempReview);
+            System.out.println("\nCreating Course [" + tempCourse1 + tempCourse2 + "] and add to Instructor: " + dbInstructor);
+            session.save(tempCourse1);
+            session.save(tempCourse2);
 
 
             session.getTransaction().commit();

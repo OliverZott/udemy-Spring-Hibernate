@@ -82,6 +82,7 @@ https://thorben-janssen.com/hibernate-best-practices-for-readable-and-maintainab
     - `List<>` field with `add()` method
     
 1. Basics  
+    - `save()` vs `persist()` [(Link)](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/8058282#questions/12499548)
     - Entity Lifecycle [(Link)](https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/7667988#questions)
         - Detach, Merge, Persist, Remove, Refresh  
         - [(Link1)](https://www.objectdb.com/java/jpa/persistence/managed) 

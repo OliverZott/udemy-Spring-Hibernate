@@ -45,7 +45,7 @@ public class Student {
 
     }
 
-    public Student(String firstName, String lastName, String email, Date dob) {
+    public Student(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
