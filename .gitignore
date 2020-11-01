@@ -3,6 +3,7 @@ Servers
 # IntelliJ
 */out/
 */.idea/
+*/classes
 */build/
 
 # Eclipse
