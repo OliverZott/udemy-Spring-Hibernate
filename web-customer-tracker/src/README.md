@@ -21,6 +21,31 @@
 	- Enable configuration of transactional annotations  
 
 # Spring-MVC and Hibernate
+ToDo:
+- Create Entity
+- Create DAO and DAO implementation
+- Create Controller
+- Create JSP
+
+- also: Handle all DI / Spring MVC config ...
 
 1. Setup basic infrastructure (Eliminate Tomcat / Eclipse Errors before starting gory database stuff)  
+    - Simple Controller + View 
+    
+1. Entity  
+    - **Create Entity** with all Annotations
+    - **Entity Scanning** is configured in `SessionFactory`-**Bean** in Spring-MVC config file
 
+1. DAO  
+    - Interface and Implementation (SessionFactory is injected)
+    - DI: SessionFactory (needs DataSource)
+    - DI: DataSource injected into SessionFactory in MVC-Config file  (line 47)
+    - Annotations: `@Repository` `@Transactional`
+    
+1. Controller     
+    - **DI - DAO** into Controller
+
+
+#### Improvement Changes
+1. Use Constructor-Injection instead field injection
+1. Make SessionFactory a Singleton and inject it

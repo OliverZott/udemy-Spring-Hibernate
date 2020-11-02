@@ -15,6 +15,7 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- Add support for component scanning -->
+	<!-- Basically we are using minimized XML-configuration and Java-Annotations (Video 51)-->
 	<context:component-scan base-package="com.luv2code.springdemo" />
 
 	<!-- Add support for conversion, formatting and validation support -->
