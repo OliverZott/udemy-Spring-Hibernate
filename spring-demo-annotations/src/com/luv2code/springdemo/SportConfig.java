@@ -5,6 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+/**
+ * With @Configuration there is al config inside Java Code --> NO xml config needed!!!
+ */
 @Configuration
 @PropertySource("classpath:sport.properties")
 // @ComponentScan("com.luv2code.springdemo")
