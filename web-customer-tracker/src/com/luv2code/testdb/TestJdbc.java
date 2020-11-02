@@ -1,5 +1,7 @@
 package com.luv2code.testdb;
 
+import org.springframework.core.SpringVersion;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -15,11 +17,13 @@ public class TestJdbc {
         try {
             System.out.println("Connecting to DB: " + jdbcUrl);
 
+            System.out.println("Spring-Version: " + SpringVersion.getVersion());
             Connection myConn = DriverManager.getConnection(jdbcUrl, user, password);
-            System.out.println("Connections successful.");
+            System.out.println("Connections successful: " + jdbcUrl);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 }
