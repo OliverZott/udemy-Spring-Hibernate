@@ -49,6 +49,12 @@ ToDo:
 1. Controller     
     - **DI - DAO** into Controller
 
+1. JSP & CSS
+    - ToDo:  
+        - place css in `resources` directory
+        - config spring to serve up resources directory
+        - reference css in jsp
+    - 
 
 #### Improvement Changes
 1. Use Constructor-Injection instead field injection
@@ -57,4 +63,4 @@ https://www.onlinetutorialspoint.com/hibernate/singleton-hibernate-sessionfactor
 
 # Resources and Remarks
 - Best practice **Dependency-Injection** [(Link)](https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it)
-
+- **Spring-MVC** [(Link)](https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/mvc.html#mvc-servlet)
