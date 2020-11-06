@@ -4,7 +4,8 @@
 	- Create Database and user-access
 	- Create Web-Project (Eclipse) with **WebContent** structure  
 	- Download MySQL JAR [(Link)](https://dev.mysql.com/downloads/connector/j/)  
-	- Create **Servlet** for database connection testing 
+	- Create **Servlet** for database connection testing
+	https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/mvc.html#mvc-servlet
 
 1. Setup Dev Environment  
 	- `web.xml` and spring config `spring-mvc-crud-demo-servlet.xml`  
@@ -19,6 +20,9 @@
 	- Setup Hibernate **session factory**  
 	- Setup Hibernate **transaction manager**  
 	- Enable configuration of transactional annotations  
+	
+### Remarks
+- before all Hibernate config was in `hibernate.cfg.xml` because we didn't use Spring
 
 # Spring-MVC and Hibernate
 ToDo:
@@ -49,3 +53,8 @@ ToDo:
 #### Improvement Changes
 1. Use Constructor-Injection instead field injection
 1. Make SessionFactory a Singleton and inject it
+https://www.onlinetutorialspoint.com/hibernate/singleton-hibernate-sessionfactory-example.html
+
+# Resources and Remarks
+- Best practice **Dependency-Injection** [(Link)](https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it)
+

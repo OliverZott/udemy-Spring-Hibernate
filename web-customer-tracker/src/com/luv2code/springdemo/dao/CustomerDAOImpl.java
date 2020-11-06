@@ -13,10 +13,18 @@ import java.util.List;
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {
 
-    // need to inject Hibernate SessionFactory
     // Field-Injection (not recommended)
-    @Autowired
+    /*@Autowired
     private SessionFactory sessionFactory;
+     */
+
+    private SessionFactory sessionFactory;
+
+    // need to inject Hibernate SessionFactory
+    @Autowired
+    public void CustomerDAO(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     @Transactional
