@@ -1,10 +1,11 @@
 package com.luv2code.springdemo.controller;
 
-import com.luv2code.springdemo.dao.CustomerDAO;
 import com.luv2code.springdemo.entity.Customer;
+import com.luv2code.springdemo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -13,23 +14,23 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController {
 
-	private final CustomerDAO customerDAO;
+    private final CustomerService customerService;
 
-	@Autowired
-	public CustomerController(CustomerDAO customerDAO) {
-		this.customerDAO = customerDAO;
-	}
+    @Autowired
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
-	@RequestMapping("/list")
-	public String listCustomers(Model theModel) {
+    @GetMapping("/list")
+    public String listCustomers(Model theModel) {
 
-		// get customer from dao
-		List<Customer> theCustomers = customerDAO.getCustomers();
+        // get customer from dao
+        List<Customer> theCustomers = customerService.getCustomers();
 
-		// add customers list to the model
-		theModel.addAttribute("customers", theCustomers);
+        // add customers list to the model
+        theModel.addAttribute("customers", theCustomers);
 
-		return "list-customers";
-	}
-	
+        return "list-customers";
+    }
+
 }
