@@ -266,8 +266,6 @@
 		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/javax.servlet-api-3.1.0.jar!/"/>
 	</lib>
 	<levels>
-		<level name="Tomcat 9.0.29" value="project"/>
 		<level name="Hibernate" value="project"/>
-		<level name="Java EE 6-Java EE 6" value="project"/>
 	</levels>
 </component>
