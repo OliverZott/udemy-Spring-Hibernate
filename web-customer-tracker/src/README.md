@@ -56,11 +56,19 @@ ToDo:
         - reference css in jsp
     - 
 
-#### Improvement Changes
-1. Use Constructor-Injection instead field injection
-1. Make SessionFactory a Singleton and inject it
-https://www.onlinetutorialspoint.com/hibernate/singleton-hibernate-sessionfactory-example.html
+#### Summary
+
+- HQL vs SQL-query  
+    `spring-hibernate-xxx-to-xxx` 
+- **Validation**  
+    `spring-mvc-demo` in class `customer.java` (Video 141)
+
 
 # Resources and Remarks
 - Best practice **Dependency-Injection** [(Link)](https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it)
 - **Spring-MVC** [(Link)](https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/mvc.html#mvc-servlet)
+
+#### Improvement Changes
+1. Use Constructor-Injection instead field injection
+1. Make SessionFactory a Singleton and inject it
+https://www.onlinetutorialspoint.com/hibernate/singleton-hibernate-sessionfactory-example.html

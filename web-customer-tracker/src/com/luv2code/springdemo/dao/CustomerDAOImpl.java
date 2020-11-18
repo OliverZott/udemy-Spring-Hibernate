@@ -26,7 +26,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
 
-    // a@Transactional is moved to service-layer ("CustomerServiceImpl")
+    // @Transactional is moved to service-layer ("CustomerServiceImpl")
     @Override
     public List<Customer> getCustomers() {
 
@@ -34,14 +34,22 @@ public class CustomerDAOImpl implements CustomerDAO {
         Session currentSession = sessionFactory.getCurrentSession();
 
         // create query
-        Query<Customer> theQuery = currentSession.createQuery("from Customer", Customer.class);
+        Query<Customer> theQuery = currentSession.createQuery("from Customer order by lastName", Customer.class);
 
         // get customer list from query by executing it
         @SuppressWarnings("UnnecessaryLocalVariable")
         List<Customer> customers = theQuery.getResultList();
 
-        // return result
         return customers;
+    }
+
+    @Override
+    public void saveCustomer(Customer customer) {
+
+        Session currentSession = sessionFactory.getCurrentSession();
+        currentSession.save(customer);
+
+
     }
 
 }

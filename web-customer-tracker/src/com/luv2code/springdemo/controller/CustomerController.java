@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -22,30 +24,37 @@ public class CustomerController {
     }
 
     @GetMapping("/list")
-    public String listCustomers(Model theModel) {
+    public String listCustomers(Model model) {
+
+        System.out.println(model);
 
         // get customer from dao
         List<Customer> theCustomers = customerService.getCustomers();
 
         // add customers list to the model
-        theModel.addAttribute("customers", theCustomers);
+        model.addAttribute("customers", theCustomers);
 
         return "list-customers";
     }
 
     @GetMapping("/showFormForAdd")
-    public String showFormForAdd(Model model) {                 // DOES IT HAVE TO BE THE SAME AS ABOVE ???
+    public String showFormForAdd(Model model) {
 
         // create model attribute to bind form-data
         Customer newCustomer = new Customer();
         model.addAttribute("customer", newCustomer);
 
-
-
         return "customer-form";
     }
 
+    @PostMapping("/saveCustomer")
+    public String saveCustomer(@ModelAttribute("customer") Customer customer) {
 
+        customerService.saveCustomer(customer);
+
+        return "redirect:/customer/list";
+
+    }
 
 
 }
