@@ -27,17 +27,17 @@
                 <tr>
                     <td><label>First name:</label></td>
                     <td><form:input path="firstName"/></td>
-                    <form:errors path="firstName"/>
-                </tr>
+                    <td><form:errors path="firstName"/></td>
+                </tr>showFormForAdd
                 <tr>
                     <td><label>Last name:</label></td>
                     <td><form:input path="lastName"/></td>
-                    <form:errors path="lastName"/>
+                    <td><form:errors path="lastName"/></td>
                 </tr>
                 <tr>
                     <td><label>E-Mail:</label></td>
                     <td><form:input path="email"/></td>
-                    <form:errors path="email"/>
+                    <td><form:errors path="email"/></td>
                 </tr>
                 <tr>
                     <td><label></label></td>
