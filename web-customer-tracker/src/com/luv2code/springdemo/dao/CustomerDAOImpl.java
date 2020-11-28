@@ -26,7 +26,11 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
 
-    // @Transactional is moved to service-layer ("CustomerServiceImpl")
+    /**
+     * "@Transactional" is moved to service-layer ("CustomerServiceImpl")
+     *
+     * @return Customer
+     */
     @Override
     public List<Customer> getCustomers() {
 
@@ -43,19 +47,21 @@ public class CustomerDAOImpl implements CustomerDAO {
         return customers;
     }
 
+
     @Override
     public Customer getCustomer(int id) {
         Session currentSession = sessionFactory.getCurrentSession();
         return currentSession.get(Customer.class, id);
     }
 
+
+    /**
+     * saveOrUpdate identifies if to use "update" or "save", based on existence of id
+     */
     @Override
     public void saveCustomer(Customer customer) {
-
         Session currentSession = sessionFactory.getCurrentSession();
-        currentSession.save(customer);
-
-
+        currentSession.saveOrUpdate(customer);
     }
 
 }
