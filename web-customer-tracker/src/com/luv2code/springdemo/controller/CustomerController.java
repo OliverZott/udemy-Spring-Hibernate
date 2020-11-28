@@ -50,9 +50,7 @@ public class CustomerController {
 
     @PostMapping("/saveCustomer")
     public String saveCustomer(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
-
-
-        if (bindingResult.hasErrors()) {
+         if (bindingResult.hasErrors()) {
             return "customer-form";
         } else {
             customerService.saveCustomer(customer);
@@ -60,12 +58,32 @@ public class CustomerController {
         }
     }
 
+    /**
+     * "GET" --> spring checks if properties are NOT Null and populates in case of Get
+     *
+     * @param id
+     * @param model
+     * @return string
+     */
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("customerId") int id, Model model) {
+
+        // get customer from our service
+        Customer customer = customerService.getCustomer(id);
+
+        // set customer as model-attribute to pre-populate the form
+        model.addAttribute("customer", customer);
+
+        // send over to our form
+        return "customer-form";
+    }
+
 
     /**
      * Functionality:
-     *  - Pre-Process every String from-data
-     *  - Remove leading- an trailing whitespace
-     *  - If only whitespace -> trim to null
+     * - Pre-Process every String from-data
+     * - Remove leading- an trailing whitespace
+     * - If only whitespace -> trim to null
      */
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
