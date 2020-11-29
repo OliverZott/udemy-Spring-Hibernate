@@ -58,7 +58,9 @@
 		</property>
    </bean>	  
 
-    <!-- Step 3: Setup Hibernate transaction manager -->
+    <!-- Step 3: Setup Hibernate transaction manager
+    https://stackoverflow.com/questions/26203446/spring-hibernate-could-not-obtain-transaction-synchronized-session-for-current
+    -->
 	<bean id="myTransactionManager"
             class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
