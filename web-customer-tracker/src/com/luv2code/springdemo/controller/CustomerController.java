@@ -28,7 +28,6 @@ public class CustomerController {
     public String listCustomers(Model model) {
 
         System.out.println(model);
-
         // get customer from dao
         List<Customer> theCustomers = customerService.getCustomers();
 
@@ -84,6 +83,13 @@ public class CustomerController {
         customerService.deleteCustomer(id);
 
         return "redirect:/customer/list";
+    }
+
+    @GetMapping("/search")
+    public String searchCustomer(@RequestParam("theSearchName") String name, Model model) {
+        List<Customer> customers = customerService.searchCustomer(name);
+        model.addAttribute("customers", customers);
+        return "list-customers";
     }
 
 
