@@ -62,6 +62,9 @@ ToDo:
     `spring-hibernate-xxx-to-xxx` 
 - **Validation**  
     `spring-mvc-demo` in class `customer.java` (Video 141)
+    
+    
+# SPring AOP
 
 
 # Resources and Remarks
