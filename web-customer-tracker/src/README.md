@@ -45,27 +45,52 @@ ToDo:
     - DI: SessionFactory (needs DataSource)
     - DI: DataSource injected into SessionFactory in MVC-Config file  (line 47)
     - Annotations: `@Repository` `@Transactional`
-    
-1. Controller     
+
+1. Controller
     - **DI - DAO** into Controller
 
 1. JSP & CSS
-    - ToDo:  
+    - ToDo:
         - place css in `resources` directory
         - config spring to serve up resources directory
         - reference css in jsp
-    - 
+    -
+
+# Spring-REST API endpoint
+
+Goal: add API endpoints for database transactions.
+
+Todo:
+
+- Endpoints:
+    - GET item/collection
+    - POST
+    - PUT
+    - DELETE
+- Postman Collection / Example / Runner
+- Security: bearer token ??
+
+# Spring-Security
+
+Goal: add login area and use different roles (guest/admin) to add/delete/update database entries. Additional: adding
+bearer token for api requests
+
+# Spring-AOP
+
+Goal: add logging for succeeded / failed database-transactions via the API-endpoint.
 
 #### Summary
 
 - HQL vs SQL-query  
-    `spring-hibernate-xxx-to-xxx` 
+  `spring-hibernate-xxx-to-xxx`
 - **Validation**  
-    `spring-mvc-demo` in class `customer.java` (Video 141)
-
+  `spring-mvc-demo` in class `customer.java` (Video 141)
 
 # Resources and Remarks
-- Best practice **Dependency-Injection** [(Link)](https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it)
+
+- Spring Configuration [(Link)](https://www.baeldung.com/spring-xml-vs-java-config)
+- Best practice **
+  Dependency-Injection** [(Link)](https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it)
 - **Spring-MVC** [(Link)](https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/mvc.html#mvc-servlet)
 
 #### Improvement Changes
