@@ -17,92 +17,90 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController {
 
-    private final CustomerService customerService;
+	private final CustomerService customerService;
 
-    @Autowired
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-    }
+	@Autowired
+	public CustomerController(CustomerService customerService) {
+		this.customerService = customerService;
+	}
 
-    @GetMapping("/list")
-    public String listCustomers(Model model) {
+	@GetMapping("/list")
+	public String listCustomers(Model model) {
 
-        System.out.println(model);
-        // get customer from dao
-        List<Customer> theCustomers = customerService.getCustomers();
+		System.out.println(model);
+		// get customer from dao
+		List<Customer> theCustomers = customerService.getCustomers();
 
-        // add customers list to the model
-        model.addAttribute("customers", theCustomers);
+		// add customers list to the model
+		model.addAttribute("customers", theCustomers);
 
-        return "list-customers";
-    }
+		return "list-customers";
+	}
 
-    @GetMapping("/showFormForAdd")
-    public String showFormForAdd(Model model) {
+	@GetMapping("/showFormForAdd")
+	public String showFormForAdd(Model model) {
 
-        // create model attribute to bind form-data
-        Customer newCustomer = new Customer();
-        model.addAttribute("customer", newCustomer);
+		// create model attribute to bind form-data
+		Customer newCustomer = new Customer();
+		model.addAttribute("customer", newCustomer);
 
-        return "customer-form";
-    }
+		return "customer-form";
+	}
 
-    @PostMapping("/saveCustomer")
-    public String saveCustomer(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
-         if (bindingResult.hasErrors()) {
-            return "customer-form";
-        } else {
-            customerService.saveCustomer(customer);
-            return "redirect:/customer/list";
-        }
-    }
+	@PostMapping("/saveCustomer")
+	public String saveCustomer(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			return "customer-form";
+		} else {
+			customerService.saveCustomer(customer);
+			return "redirect:/customer/list";
+		}
+	}
 
-    /**
-     * "GET" --> spring checks if properties are NOT Null and populates in case of Get
-     *
-     * @param id
-     * @param model
-     * @return string
-     */
-    @GetMapping("/showFormForUpdate")
-    public String showFormForUpdate(@RequestParam("customerId") int id, Model model) {
+	/**
+	 * "GET" --> spring checks if properties are NOT Null and populates in case of
+	 * Get
+	 *
+	 * @param id
+	 * @param model
+	 * @return string
+	 */
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("customerId") int id, Model model) {
 
-        // get customer from our service
-        Customer customer = customerService.getCustomer(id);
+		// get customer from our service
+		Customer customer = customerService.getCustomer(id);
 
-        // set customer as model-attribute to pre-populate the form
-        model.addAttribute("customer", customer);
+		// set customer as model-attribute to pre-populate the form
+		model.addAttribute("customer", customer);
 
-        // send over to our form
-        return "customer-form";
-    }
+		// send over to our form
+		return "customer-form";
+	}
 
-    @GetMapping("/delete")
-    public String showFormForDelete(@RequestParam("customerId") int id, Model model) {
+	@GetMapping("/delete")
+	public String showFormForDelete(@RequestParam("customerId") int id, Model model) {
 
-        customerService.deleteCustomer(id);
+		customerService.deleteCustomer(id);
 
-        return "redirect:/customer/list";
-    }
+		return "redirect:/customer/list";
+	}
 
-    @GetMapping("/search")
-    public String searchCustomer(@RequestParam("theSearchName") String name, Model model) {
-        List<Customer> customers = customerService.searchCustomer(name);
-        model.addAttribute("customers", customers);
-        return "list-customers";
-    }
+	@GetMapping("/search")
+	public String searchCustomer(@RequestParam("theSearchName") String name, Model model) {
+		List<Customer> customers = customerService.searchCustomer(name);
+		model.addAttribute("customers", customers);
+		return "list-customers";
+	}
 
-
-    /**
-     * Functionality:
-     * - Pre-Process every String from-data
-     * - Remove leading- an trailing whitespace
-     * - If only whitespace -> trim to null
-     */
-    @InitBinder
-    public void initBinder(WebDataBinder dataBinder) {
-        StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
-        dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
-    }
+	/**
+	 * Functionality: - Pre-Process every String from-data - Remove leading- an
+	 * trailing whitespace - If only whitespace -> trim to null
+	 */
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+	}
 
 }
